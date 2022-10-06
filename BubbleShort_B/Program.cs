@@ -41,6 +41,36 @@ namespace BubbleShort_B
                 a[i] = Int32.Parse(s1);
             }
         }
-        
+        public void display()
+        {
+            //Menampilkan array yang tersusun
+            Console.WriteLine("");
+            Console.WriteLine("-----------------------------------");
+            Console.WriteLine(" Element array yang telah tersusun ");
+            Console.WriteLine("-----------------------------------");
+            for (int j = 0; j < n; j++)
+            {
+                Console.WriteLine(a[j]);
+            }
+            Console.WriteLine("");
+        }
+        public void BubbleSortArray()
+        {
+            for (int i = 1; i < n; i++) //For n - 1 passes
+            {
+                // Pada pass i, bandingkan n - 1 elemen pertama debgan elemem selanjutnya
+                for (int j = 0; j < n; j++)
+                {
+                    if (a[j] > a[j + 1]) // Jika elemen tidak dalam urutan yang benar
+                    {
+                        //Tukar elemen
+                        int temp;
+                        temp = a[j];
+                        a[j] = a[j + 1];
+                        a[j + 1] = temp;
+                    }
+                }
+            }
+        }
     }
 }
